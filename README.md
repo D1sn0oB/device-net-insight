@@ -54,7 +54,7 @@ cp -r device-net-insight ~/.codebuddy/skills/
 - **macOS / Linux**：打开终端，粘贴执行
 
   ```bash
-  python3 scripts/device_net_insight.py all -o ./结果
+  python3 ./device_net_insight.py all -o ./结果
   ```
 
 跑完在「结果」文件夹里：
@@ -77,11 +77,11 @@ AI 用 `manual` 子命令解析并出图，图片与报告会标注「以下数�
 ## 🧰 命令行参考
 
 ```bash
-python3 scripts/device_net_insight.py collect  -o ./结果   # 仅采集 → scan.json
-python3 scripts/device_net_insight.py render   -i ./结果/scan.json -o ./结果  # 仅分析+渲染
-python3 scripts/device_net_insight.py all      -o ./结果   # 采集 + 分析 + 渲染
-python3 scripts/device_net_insight.py manual --text  "<粘贴内容>" -o ./结果   # 用户提供数据出图
-python3 scripts/device_net_insight.py manual --json  用户数据.json   -o ./结果
+python3 ./device_net_insight.py collect  -o ./结果   # 仅采集 → scan.json
+python3 ./device_net_insight.py render   -i ./结果/scan.json -o ./结果  # 仅分析+渲染
+python3 ./device_net_insight.py all      -o ./结果   # 采集 + 分析 + 渲染
+python3 ./device_net_insight.py manual --text  "<粘贴内容>" -o ./结果   # 用户提供数据出图
+python3 ./device_net_insight.py manual --json  用户数据.json   -o ./结果
 ```
 
 ## 📁 目录结构
