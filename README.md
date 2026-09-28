@@ -10,7 +10,7 @@
 
 ## 🖼️ 效果预览
 
-![设备连接体检仪表盘](assets/preview.png)
+![设备连接体检仪表盘](./preview.png)
 
 > 跑完直接双击就得到这样一张 Ins 风暗色仪表盘，外加一份「大白话」文字报告。
 > 不用懂 dBm、信道、DNS 这些名词，图上每一条都是人话结论。
@@ -91,13 +91,10 @@ device-net-insight/
 ├── SKILL.md                 # 技能定义（触发条件、工作流、给用户的说明）
 ├── README.md                # 本文件
 ├── LICENSE                  # MIT 许可证
-├── 一键体检.bat             # Windows 双击启动器
-├── assets/
-│   └── preview.png          # 仪表盘效果预览图
-├── scripts/
-│   └── device_net_insight.py  # 采集 + 分析 + 渲染主程序
-└── references/
-    └── metrics_guide.md     # 各指标的通俗解释对照表
+├── 一键体检.bat              # Windows 双击启动器
+├── preview.png              # 仪表盘效果预览图
+├── device_net_insight.py    # 采集 + 分析 + 渲染主程序
+└── metrics_guide.md         # 各指标的通俗解释对照表
 ```
 
 ## 📋 依赖
