@@ -47,7 +47,7 @@ description: 本地查询用户设备的网络 / WiFi / 蓝牙详细数据，做
 
 - **方式 A · 在你自己的电脑上跑（推荐，数据最全）**
   - Windows：打开「文件管理器」→ 进入本工具目录 → **双击 `一键体检.bat`**。它会自动装好依赖、跑完自动弹出「结果」文件夹；你**双击 `连接体检仪表盘_*.png` 看体检图、双击 `连接体检报告_*.txt` 看文字版**。
-  - Mac / Linux：打开「终端」，粘贴执行 `python3 ~/.codebuddy/skills/device-net-insight/scripts/device_net_insight.py all -o ./结果`，跑完在 `./结果` 里看那两个文件。
+  - Mac / Linux：打开「终端」，粘贴执行 `python3 ~/.codebuddy/skills/device-net-insight/device_net_insight.py all -o ./结果`，跑完在 `./结果` 里看那两个文件。
   - 这样读到的是**你本机真实数据**。
 
 - **方式 B · 我（在云端）读不到你的设备时**
@@ -76,7 +76,7 @@ description: 本地查询用户设备的网络 / WiFi / 蓝牙详细数据，做
   - 若双击没反应：右键「以管理员身份运行」，或在终端 `cd` 进该目录后输入 `一键体检.bat` 回车。
 - **macOS / Linux**：打开「终端」，粘贴执行（自动识别系统、采集本机真实数据）：
   ```bash
-  python3 ~/.codebuddy/skills/device-net-insight/scripts/device_net_insight.py all -o ./结果
+  python3 ~/.codebuddy/skills/device-net-insight/device_net_insight.py all -o ./结果
   ```
   跑完在 `./结果` 文件夹里，**双击 `连接体检仪表盘_*.png` 看体检图、双击 `连接体检报告_*.txt` 看大白话文字版**。
 - 这样采集到的是**用户本机真实数据**，图片与报告均标注「完全本地生成 · 未联网」。
@@ -118,7 +118,7 @@ description: 本地查询用户设备的网络 / WiFi / 蓝牙详细数据，做
 
 ## 工作流
 
-本 skill 提供一个跨平台 Python 脚本 `scripts/device_net_insight.py`，分三步（一条 `all` 命令即可跑完）：
+本 skill 提供一个跨平台 Python 脚本 `./device_net_insight.py`，分三步（一条 `all` 命令即可跑完）：
 
 1. **采集（collect）**：按系统（macOS / Linux / Windows）调用原生命令读取网卡、WiFi、蓝牙、网关、DNS 信息 → 写成 `scan.json`。
 2. **分析（render 内置）**：把原始数据翻译成「人话」结论（信号强弱、频段、加密安全、到路由器延迟、蓝牙设备数等），并给每条结论配一句科普。
@@ -127,7 +127,7 @@ description: 本地查询用户设备的网络 / WiFi / 蓝牙详细数据，做
 ### 一条命令跑完
 
 ```bash
-python3 ~/.codebuddy/skills/device-net-insight/scripts/device_net_insight.py all -o ./结果
+python3 ~/.codebuddy/skills/device-net-insight/device_net_insight.py all -o ./结果
 ```
 
 ### 分步运行
@@ -143,7 +143,7 @@ python3 .../device_net_insight.py manual --text "<粘贴内容>" -o ./结果
 
 ## 给「小白用户」的解释口径（关键）
 
-输出结论时必须用通俗语言，参考 `references/metrics_guide.md` 里的对照表。原则：
+输出结论时必须用通俗语言，参考 `./metrics_guide.md` 里的对照表。原则：
 
 - **不说黑话**：把 dBm、BSSID、PHY mode 翻成「信号强度」「路由器地址」「上网速度档次」。
 - **给感受**：用「满格 / 一般 / 偏弱 / 容易断」这种用户能体会的词。
